@@ -220,7 +220,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/27/숫자표현/">표현</a>
+            <a class="article-title" href="/2018/03/27/숫자표현/">숫자표현</a>
         </h1>
     
 
@@ -258,23 +258,19 @@
             <p>대부분의 프로그램에서 수를 다루지만 특히 백엔드-서버 프로그램,<br>그 중에서도 핀테크 영역에서는 숫자를 중요하게 다룬다.<br>통상적인 컴퓨팅에서의 숫자 표기를 알아보자.</p>
 <h3 id="기본형의-크기-Java"><a href="#기본형의-크기-Java" class="headerlink" title="기본형의 크기(Java)"></a>기본형의 크기(Java)</h3><p>boolean : 1 byte<br>char :       2 bytes<br>byte :       1 byte<br>short :      2 bytes<br>int :       4 bytes<br>long :       8 bytes<br>float :      4 bytes<br>double :  8 bytes</p>
 <p>OS, Language, CPU에 따라 다를 수 있지만 자바의 예를 들어본다.</p>
-<h3 id="용어정리"><a href="#용어정리" class="headerlink" title="용어정리"></a>용어정리</h3><p>MSB (Most Significant Byte) </p>
-<ul>
-<li>최상위 바이트를 지칭<br>LSB (Least Significant Byte) </li>
+<h3 id="용어정리"><a href="#용어정리" class="headerlink" title="용어정리"></a>용어정리</h3><h5 id="MSB-Most-Significant-Byte"><a href="#MSB-Most-Significant-Byte" class="headerlink" title="MSB (Most Significant Byte)"></a>MSB (Most Significant Byte)</h5><ul>
+<li>최상위 바이트를 지칭<h5 id="LSB-Least-Significant-Byte"><a href="#LSB-Least-Significant-Byte" class="headerlink" title="LSB (Least Significant Byte)"></a>LSB (Least Significant Byte)</h5></li>
 <li>최하위 바이트를 지칭</li>
 </ul>
-<p>빅엔디안 (Big-end-ian) </p>
-<ul>
+<h5 id="빅엔디안-Big-end-ian"><a href="#빅엔디안-Big-end-ian" class="headerlink" title="빅엔디안 (Big-end-ian)"></a>빅엔디안 (Big-end-ian)</h5><ul>
 <li>0x1234    : 12 34<br>0x12345678   : 12 34 56 78</li>
 <li>MSB 부터 저장하는 방식, 네트워크에서 전송될 때 상기 타입을 따른다. 네트워크 라우팅은  맨 앞 바이트에서 통신의 성격을 지정해 주는 식으로 개발 되었기 때문이다.<br>많은 네트워크 프로토콜 및 파일 포맷들이 빅엔디안을 따른다.<br>앞에서부터 차례대로 숫자를 저장하기 때문에 사람이 인식하기 쉽다(예:디버그)는 장점도 있다.<br>주로 RISC cpu, unix 또는 Mac OS에서 사용된다. </li>
 </ul>
-<p>리틀엔디안 (Little-end-ian)</p>
-<ul>
+<h5 id="리틀엔디안-Little-end-ian"><a href="#리틀엔디안-Little-end-ian" class="headerlink" title="리틀엔디안 (Little-end-ian)"></a>리틀엔디안 (Little-end-ian)</h5><ul>
 <li>0x1234    : 34 12<br>0x12345678   : 78 56 34 12</li>
 <li>LSB 부터 저장하는 방식, 주로 x86(인텔), windows에서 사용된다.<br>가산기를 구현할 때 앞에서부터 읽기 때문에 설계가 용이한 장점이 있으며<br>0x12(4 bytes 정수타입)의 경우 12 00 00 00 이 되는데 지정된 크기만 필요할 경우 뒷부분의 불필요한 바이트를 읽는 수고를 덜 수 있다는 장점이 있다.</li>
 </ul>
-<p>바이엔디안 (Bi-end-ian)</p>
-<ul>
+<h5 id="바이엔디안-Bi-end-ian"><a href="#바이엔디안-Bi-end-ian" class="headerlink" title="바이엔디안 (Bi-end-ian)"></a>바이엔디안 (Bi-end-ian)</h5><ul>
 <li>ARM cpu의 경우 엔디안을 지정해서 사용 할 수 있다.</li>
 </ul>
 <p>왜 상기 시스템에서 Byte 단위에 대해서 따지는지 궁금할 수 있다.<br>그 이유는 대게의 메모리 접근은 byte단위로 이뤄지기 때문이다.<br>bit 단위의 접근은 low level에서 이뤄지며 보통 아키텍쳐에 중립적이다.</p>
@@ -289,7 +285,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/27/숫자표현/" data-id="cjf9rshsl000244wn849qgw29" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/27/숫자표현/" data-id="cjfayvpkb0006v4wnunrl6pax" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -438,7 +434,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/26/hello-world/" data-id="cjf9rshsg000044wnjoxtkud8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/26/hello-world/" data-id="cjfayvpk20000v4wnvim2q7vb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -570,7 +566,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/08/대칭키-암호-실전-예제/" data-id="cjf9rshsv000844wni516fdif" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/08/대칭키-암호-실전-예제/" data-id="cjfayvpkd0008v4wnclu7qj20" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -705,7 +701,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/07/markdown-practice/" data-id="cjf9rshss000644wn5kh5g49l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/07/markdown-practice/" data-id="cjfayvpk60002v4wnmfy431nr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -805,7 +801,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/computing/">computing</a></p>
-                            <p class="item-title"><a href="/2018/03/27/숫자표현/" class="title">표현</a></p>
+                            <p class="item-title"><a href="/2018/03/27/숫자표현/" class="title">숫자표현</a></p>
                             <p class="item-date"><time datetime="2018-03-27T14:40:39.000Z" itemprop="datePublished">2018-03-27</time></p>
                         </div>
                     </li>
