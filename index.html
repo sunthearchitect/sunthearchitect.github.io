@@ -159,11 +159,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                4
+                3
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                12
+                9
                 <span>tags</span>
             </div>
         </div>
@@ -212,15 +212,25 @@
 
             
             <section id="main">
-    <article id="post-숫자표현" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-markdown예시" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
+        
+            
+	
+		<a href="/2018/06/04/markdown예시/" itemprop="url">
+            <img src="https://css-tricks.com/wp-content/uploads/2016/01/choose-markdown.jpg" class="article-banner" />
+        </a>
+	
+
+
+
         
         
             <header class="article-header">
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/27/숫자표현/">숫자표현</a>
+            <a class="article-title" href="/2018/06/04/markdown예시/">Markdown 작성 예제</a>
         </h1>
     
 
@@ -229,8 +239,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/27/숫자표현/">
-            <time datetime="2018-03-27T14:40:39.000Z" itemprop="datePublished">2018-03-27</time>
+        <a href="/2018/06/04/markdown예시/">
+            <time datetime="2018-06-04T12:50:16.196Z" itemprop="datePublished">2018-06-04</time>
         </a>
     </div>
 
@@ -238,13 +248,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/computing/">computing</a>
+        <a class="article-category-link" href="/categories/blog/">blog</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/엔디안-빅엔디안-리틀엔디안/">엔디안, 빅엔디안, 리틀엔디안</a>
+        <a class="tag-link" href="/tags/markdown/">markdown</a>
     </div>
 
                     </div>
@@ -255,26 +265,21 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>대부분의 프로그램에서 수를 다루지만 특히 백엔드-서버 프로그램,<br>그 중에서도 핀테크 영역에서는 숫자를 중요하게 다룬다.<br>통상적인 컴퓨팅에서의 숫자 표기를 알아보자.</p>
-<h3 id="기본형의-크기-Java"><a href="#기본형의-크기-Java" class="headerlink" title="기본형의 크기(Java)"></a>기본형의 크기(Java)</h3><p>boolean : 1 byte<br>char :       2 bytes<br>byte :       1 byte<br>short :      2 bytes<br>int :       4 bytes<br>long :       8 bytes<br>float :      4 bytes<br>double :  8 bytes</p>
-<p>OS, Language, CPU에 따라 다를 수 있지만 자바의 예를 들어본다.</p>
-<h3 id="용어정리"><a href="#용어정리" class="headerlink" title="용어정리"></a>용어정리</h3><h5 id="MSB-Most-Significant-Byte"><a href="#MSB-Most-Significant-Byte" class="headerlink" title="MSB (Most Significant Byte)"></a>MSB (Most Significant Byte)</h5><ul>
-<li>최상위 바이트를 지칭<h5 id="LSB-Least-Significant-Byte"><a href="#LSB-Least-Significant-Byte" class="headerlink" title="LSB (Least Significant Byte)"></a>LSB (Least Significant Byte)</h5></li>
-<li>최하위 바이트를 지칭</li>
-</ul>
-<h5 id="빅엔디안-Big-end-ian"><a href="#빅엔디안-Big-end-ian" class="headerlink" title="빅엔디안 (Big-end-ian)"></a>빅엔디안 (Big-end-ian)</h5><ul>
-<li>0x1234    : 12 34<br>0x12345678   : 12 34 56 78</li>
-<li>MSB 부터 저장하는 방식, 네트워크에서 전송될 때 상기 타입을 따른다. 네트워크 라우팅은  맨 앞 바이트에서 통신의 성격을 지정해 주는 식으로 개발 되었기 때문이다.<br>많은 네트워크 프로토콜 및 파일 포맷들이 빅엔디안을 따른다.<br>앞에서부터 차례대로 숫자를 저장하기 때문에 사람이 인식하기 쉽다(예:디버그)는 장점도 있다.<br>주로 RISC cpu, unix 또는 Mac OS에서 사용된다. </li>
-</ul>
-<h5 id="리틀엔디안-Little-end-ian"><a href="#리틀엔디안-Little-end-ian" class="headerlink" title="리틀엔디안 (Little-end-ian)"></a>리틀엔디안 (Little-end-ian)</h5><ul>
-<li>0x1234    : 34 12<br>0x12345678   : 78 56 34 12</li>
-<li>LSB 부터 저장하는 방식, 주로 x86(인텔), windows에서 사용된다.<br>가산기를 구현할 때 앞에서부터 읽기 때문에 설계가 용이한 장점이 있으며<br>0x12(4 bytes 정수타입)의 경우 12 00 00 00 이 되는데 지정된 크기만 필요할 경우 뒷부분의 불필요한 바이트를 읽는 수고를 덜 수 있다는 장점이 있다.</li>
-</ul>
-<h5 id="바이엔디안-Bi-end-ian"><a href="#바이엔디안-Bi-end-ian" class="headerlink" title="바이엔디안 (Bi-end-ian)"></a>바이엔디안 (Bi-end-ian)</h5><ul>
-<li>ARM cpu의 경우 엔디안을 지정해서 사용 할 수 있다.</li>
-</ul>
-<p>왜 상기 시스템에서 Byte 단위에 대해서 따지는지 궁금할 수 있다.<br>그 이유는 대게의 메모리 접근은 byte단위로 이뤄지기 때문이다.<br>bit 단위의 접근은 low level에서 이뤄지며 보통 아키텍쳐에 중립적이다.</p>
-<p>상기 개념들이 의미를 가지는 경우는 주로 소켓 통신을 할 경우다.<br>소켓 통신을 할 경우 보통 미들웨어등의 다양한 layer를 거치는 경우가 많은데, 다양한 이기종 시스템들의 경우 OS, 아키텍쳐, 언어 또는 legacy system등의 이유로<br>타입이 다를 경우가 많다. 그럴 때 기본적인 개념을 숙지해두면 도움이 될 것이다.</p>
+            <p> 마크 다운 작성에 대해서 알아본다. hexo에서 문서 작성의 기본은 다음을 참조한다. <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> </p>
+<p>간략한 예시는 다음과 같다.</p>
+<h2 id="Hexo-Posting-Quick-Start"><a href="#Hexo-Posting-Quick-Start" class="headerlink" title="Hexo Posting Quick Start"></a>Hexo Posting Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -o</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deply-to-remote-sites"><a href="#Deply-to-remote-sites" class="headerlink" title="Deply to remote sites"></a>Deply to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="Clean-static-files"><a href="#Clean-static-files" class="headerlink" title="Clean static files"></a>Clean static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<h1 id="Syntax-Hilights"><a href="#Syntax-Hilights" class="headerlink" title="Syntax Hilights"></a>Syntax Hilights</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"HI"</span>);:</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep <span class="string">'tomcat6'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ google.com : [google](http://www.google.com)</span><br></pre></td></tr></table></figure>
+<p>google.com : <a href="http://www.google.com" target="_blank" rel="noopener">google</a></p>
 
         
         </div>
@@ -285,7 +290,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/27/숫자표현/" data-id="cjfayvpkb0006v4wnunrl6pax" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/06/04/markdown예시/" data-id="cji096nem0000fownl093up2x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -361,25 +366,15 @@
 
 
 
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-숫자표현" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
-            
-	
-		<a href="/2018/03/26/hello-world/" itemprop="url">
-            <img src="http://www.themusehotel.com/images/1700-960/mse-hero3-306deb24.jpg" class="article-banner" />
-        </a>
-	
-
-
-
         
         
             <header class="article-header">
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/26/hello-world/">Hello World</a>
+            <a class="article-title" href="/2018/03/27/숫자표현/">숫자표현</a>
         </h1>
     
 
@@ -388,8 +383,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/26/hello-world/">
-            <time datetime="2018-03-26T14:40:28.370Z" itemprop="datePublished">2018-03-26</time>
+        <a href="/2018/03/27/숫자표현/">
+            <time datetime="2018-03-27T14:40:39.000Z" itemprop="datePublished">2018-03-27</time>
         </a>
     </div>
 
@@ -397,13 +392,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/misc/">misc</a>
+        <a class="article-category-link" href="/categories/computing/">computing</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/blah/">blah</a>, <a class="tag-link" href="/tags/daily/">daily</a>
+        <a class="tag-link" href="/tags/엔디안-빅엔디안-리틀엔디안/">엔디안, 빅엔디안, 리틀엔디안</a>
     </div>
 
                     </div>
@@ -414,16 +409,26 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<p>credential test</p>
+            <p>대부분의 프로그램에서 수를 다루지만 특히 백엔드-서버 프로그램,<br>그 중에서도 핀테크 영역에서는 숫자를 중요하게 다룬다.<br>통상적인 컴퓨팅에서의 숫자 표기를 알아보자.</p>
+<h3 id="기본형의-크기-Java"><a href="#기본형의-크기-Java" class="headerlink" title="기본형의 크기(Java)"></a>기본형의 크기(Java)</h3><p>boolean : 1 byte<br>char :       2 bytes<br>byte :       1 byte<br>short :      2 bytes<br>int :       4 bytes<br>long :       8 bytes<br>float :      4 bytes<br>double :  8 bytes</p>
+<p>OS, Language, CPU에 따라 다를 수 있지만 자바의 예를 들어본다.</p>
+<h3 id="용어정리"><a href="#용어정리" class="headerlink" title="용어정리"></a>용어정리</h3><h5 id="MSB-Most-Significant-Byte"><a href="#MSB-Most-Significant-Byte" class="headerlink" title="MSB (Most Significant Byte)"></a>MSB (Most Significant Byte)</h5><ul>
+<li>최상위 바이트를 지칭<h5 id="LSB-Least-Significant-Byte"><a href="#LSB-Least-Significant-Byte" class="headerlink" title="LSB (Least Significant Byte)"></a>LSB (Least Significant Byte)</h5></li>
+<li>최하위 바이트를 지칭</li>
+</ul>
+<h5 id="빅엔디안-Big-end-ian"><a href="#빅엔디안-Big-end-ian" class="headerlink" title="빅엔디안 (Big-end-ian)"></a>빅엔디안 (Big-end-ian)</h5><ul>
+<li>0x1234    : 12 34<br>0x12345678   : 12 34 56 78</li>
+<li>MSB 부터 저장하는 방식, 네트워크에서 전송될 때 상기 타입을 따른다. 네트워크 라우팅은  맨 앞 바이트에서 통신의 성격을 지정해 주는 식으로 개발 되었기 때문이다.<br>많은 네트워크 프로토콜 및 파일 포맷들이 빅엔디안을 따른다.<br>앞에서부터 차례대로 숫자를 저장하기 때문에 사람이 인식하기 쉽다(예:디버그)는 장점도 있다.<br>주로 RISC cpu, unix 또는 Mac OS에서 사용된다. </li>
+</ul>
+<h5 id="리틀엔디안-Little-end-ian"><a href="#리틀엔디안-Little-end-ian" class="headerlink" title="리틀엔디안 (Little-end-ian)"></a>리틀엔디안 (Little-end-ian)</h5><ul>
+<li>0x1234    : 34 12<br>0x12345678   : 78 56 34 12</li>
+<li>LSB 부터 저장하는 방식, 주로 x86(인텔), windows에서 사용된다.<br>가산기를 구현할 때 앞에서부터 읽기 때문에 설계가 용이한 장점이 있으며<br>0x12(4 bytes 정수타입)의 경우 12 00 00 00 이 되는데 지정된 크기만 필요할 경우 뒷부분의 불필요한 바이트를 읽는 수고를 덜 수 있다는 장점이 있다.</li>
+</ul>
+<h5 id="바이엔디안-Bi-end-ian"><a href="#바이엔디안-Bi-end-ian" class="headerlink" title="바이엔디안 (Bi-end-ian)"></a>바이엔디안 (Bi-end-ian)</h5><ul>
+<li>ARM cpu의 경우 엔디안을 지정해서 사용 할 수 있다.</li>
+</ul>
+<p>왜 상기 시스템에서 Byte 단위에 대해서 따지는지 궁금할 수 있다.<br>그 이유는 대게의 메모리 접근은 byte단위로 이뤄지기 때문이다.<br>bit 단위의 접근은 low level에서 이뤄지며 보통 아키텍쳐에 중립적이다.</p>
+<p>상기 개념들이 의미를 가지는 경우는 주로 소켓 통신을 할 경우다.<br>소켓 통신을 할 경우 보통 미들웨어등의 다양한 layer를 거치는 경우가 많은데, 다양한 이기종 시스템들의 경우 OS, 아키텍쳐, 언어 또는 legacy system등의 이유로<br>타입이 다를 경우가 많다. 그럴 때 기본적인 개념을 숙지해두면 도움이 될 것이다.</p>
 
         
         </div>
@@ -434,7 +439,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/26/hello-world/" data-id="cjfayvpk20000v4wnvim2q7vb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/27/숫자표현/" data-id="cji096new0006fownlrk2if7v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -566,142 +571,7 @@
 
 </div>
 
-    <a data-url="http://sunthearchitect.github.io/2018/03/08/대칭키-암호-실전-예제/" data-id="cjfayvpkd0008v4wnclu7qj20" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-markdown-practice" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/07/markdown-practice/">markdown practice</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/07/markdown-practice/">
-            <time datetime="2018-03-07T05:39:21.000Z" itemprop="datePublished">2018-03-07</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/markdown/">markdown</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/markdown/">markdown</a>, <a class="tag-link" href="/tags/md/">md</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>a simple plain text sentence row here.</p>
-<p>another sentence after lf, lf</p>
-<h2 id="Header-here-text-with-three-sharps-ahead"><a href="#Header-here-text-with-three-sharps-ahead" class="headerlink" title="Header here , text with three sharps ahead"></a>Header here , text with three sharps ahead</h2><p>simple plain text body</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"HI"</span>);:</span><br></pre></td></tr></table></figure>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep <span class="string">'tomcat6'</span></span><br></pre></td></tr></table></figure>
-<h2 id="Link-Test"><a href="#Link-Test" class="headerlink" title="Link Test"></a>Link Test</h2><p>google.com : <a href="http://www.google.com" target="_blank" rel="noopener">google</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://sunthearchitect.github.io/2018/03/07/markdown-practice/" data-id="cjfayvpk60002v4wnmfy431nr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://sunthearchitect.github.io/2018/03/08/대칭키-암호-실전-예제/" data-id="cji096ner0002fownjwvvkrtx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -790,6 +660,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/06/04/markdown예시/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://css-tricks.com/wp-content/uploads/2016/01/choose-markdown.jpg)" alt="Markdown 작성 예제" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/blog/">blog</a></p>
+                            <p class="item-title"><a href="/2018/06/04/markdown예시/" class="title">Markdown 작성 예제</a></p>
+                            <p class="item-date"><time datetime="2018-06-04T12:50:16.196Z" itemprop="datePublished">2018-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/03/27/숫자표현/" class="thumbnail">
     
     
@@ -803,25 +692,6 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/computing/">computing</a></p>
                             <p class="item-title"><a href="/2018/03/27/숫자표현/" class="title">숫자표현</a></p>
                             <p class="item-date"><time datetime="2018-03-27T14:40:39.000Z" itemprop="datePublished">2018-03-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/26/hello-world/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://www.themusehotel.com/images/1700-960/mse-hero3-306deb24.jpg)" alt="Hello World" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/misc/">misc</a></p>
-                            <p class="item-title"><a href="/2018/03/26/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2018-03-26T14:40:28.370Z" itemprop="datePublished">2018-03-26</time></p>
                         </div>
                     </li>
                 
@@ -844,25 +714,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/07/markdown-practice/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/markdown/">markdown</a></p>
-                            <p class="item-title"><a href="/2018/03/07/markdown-practice/" class="title">markdown practice</a></p>
-                            <p class="item-date"><time datetime="2018-03-07T05:39:21.000Z" itemprop="datePublished">2018-03-07</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -872,7 +723,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computing/">computing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/misc/">misc</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/암호화/">암호화</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/computing/">computing</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/암호화/">암호화</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -881,7 +732,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -890,7 +741,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AES/">AES</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CBC/">CBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECB/">ECB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEED/">SEED</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blah/">blah</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/daily/">daily</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/대칭키/">대칭키</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/암호/">암호</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/암호화/">암호화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/엔디안-빅엔디안-리틀엔디안/">엔디안, 빅엔디안, 리틀엔디안</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AES/">AES</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CBC/">CBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECB/">ECB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEED/">SEED</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/대칭키/">대칭키</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/암호/">암호</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/암호화/">암호화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/엔디안-빅엔디안-리틀엔디안/">엔디안, 빅엔디안, 리틀엔디안</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -899,7 +750,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AES/" style="font-size: 10px;">AES</a> <a href="/tags/CBC/" style="font-size: 10px;">CBC</a> <a href="/tags/ECB/" style="font-size: 10px;">ECB</a> <a href="/tags/SEED/" style="font-size: 10px;">SEED</a> <a href="/tags/blah/" style="font-size: 10px;">blah</a> <a href="/tags/daily/" style="font-size: 10px;">daily</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/대칭키/" style="font-size: 10px;">대칭키</a> <a href="/tags/암호/" style="font-size: 10px;">암호</a> <a href="/tags/암호화/" style="font-size: 10px;">암호화</a> <a href="/tags/엔디안-빅엔디안-리틀엔디안/" style="font-size: 10px;">엔디안, 빅엔디안, 리틀엔디안</a>
+            <a href="/tags/AES/" style="font-size: 10px;">AES</a> <a href="/tags/CBC/" style="font-size: 10px;">CBC</a> <a href="/tags/ECB/" style="font-size: 10px;">ECB</a> <a href="/tags/SEED/" style="font-size: 10px;">SEED</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/대칭키/" style="font-size: 10px;">대칭키</a> <a href="/tags/암호/" style="font-size: 10px;">암호</a> <a href="/tags/암호화/" style="font-size: 10px;">암호화</a> <a href="/tags/엔디안-빅엔디안-리틀엔디안/" style="font-size: 10px;">엔디안, 빅엔디안, 리틀엔디안</a>
         </div>
     </div>
 
