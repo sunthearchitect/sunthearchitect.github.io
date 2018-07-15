@@ -3,18 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: computing | Sun&#39;s notepad</title>
+    <title>웹 서버 인증 기초 | Sun&#39;s notepad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="개발일지">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sun&#39;s notepad">
-<meta property="og:url" content="http://sunthearchitect.github.io/categories/computing/index.html">
+    <meta name="description" content="웹서버는 기본적으로 문서를 전송하기 위해 만들어진 것이다. 하지만 웹서버를 통해 개인화된 문서를 전송하려는 요구사항이 생김에 따라 서버-클라이언트의 상태를 관리할 필요가 생겼고 이를 HTTP State Management라고 한다.  서버-클라이언트 간의 통신 시 클라이언트는 자신임을 입증하기 위한 정보를 서버에 송신하는데 이를 네트웍 상의 중간자가 관찰">
+<meta name="keywords" content="인증, 상호인증, nonce, 논스, 넌스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="웹 서버 인증 기초">
+<meta property="og:url" content="http://sunthearchitect.github.io/2018/07/15/웹-서버-인증-기초/index.html">
 <meta property="og:site_name" content="Sun&#39;s notepad">
-<meta property="og:description" content="개발일지">
+<meta property="og:description" content="웹서버는 기본적으로 문서를 전송하기 위해 만들어진 것이다. 하지만 웹서버를 통해 개인화된 문서를 전송하려는 요구사항이 생김에 따라 서버-클라이언트의 상태를 관리할 필요가 생겼고 이를 HTTP State Management라고 한다.  서버-클라이언트 간의 통신 시 클라이언트는 자신임을 입증하기 위한 정보를 서버에 송신하는데 이를 네트웍 상의 중간자가 관찰">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-07-15T12:55:02.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sun&#39;s notepad">
-<meta name="twitter:description" content="개발일지">
+<meta name="twitter:title" content="웹 서버 인증 기초">
+<meta name="twitter:description" content="웹서버는 기본적으로 문서를 전송하기 위해 만들어진 것이다. 하지만 웹서버를 통해 개인화된 문서를 전송하려는 요구사항이 생김에 따라 서버-클라이언트의 상태를 관리할 필요가 생겼고 이를 HTTP State Management라고 한다.  서버-클라이언트 간의 통신 시 클라이언트는 자신임을 입증하기 위한 정보를 서버에 송신하는데 이를 네트웍 상의 중간자가 관찰">
     
 
     
@@ -211,50 +213,148 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">computing</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-웹-서버-인증-기초" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/27/숫자표현/">숫자표현</a>
+        <h1 class="article-title" itemprop="name">
+            웹 서버 인증 기초
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/27/숫자표현/">
-            <time datetime="2018-03-27T14:40:39.000Z" itemprop="datePublished">2018-03-27</time>
+        <a href="/2018/07/15/웹-서버-인증-기초/">
+            <time datetime="2018-07-15T10:41:35.000Z" itemprop="datePublished">2018-07-15</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/computing/">computing</a>
-    </div>
-
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/엔디안-빅엔디안-리틀엔디안/">엔디안, 빅엔디안, 리틀엔디안</a>
+        <a class="tag-link" href="/tags/인증-상호인증-nonce-논스-넌스/">인증, 상호인증, nonce, 논스, 넌스</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p> 웹서버는 기본적으로 문서를 전송하기 위해 만들어진 것이다.<br> 하지만 웹서버를 통해 개인화된 문서를 전송하려는 요구사항이 생김에 따라<br> 서버-클라이언트의 상태를 관리할 필요가 생겼고 이를 HTTP State Management라고 한다.</p>
+<p> 서버-클라이언트 간의 통신 시 클라이언트는 자신임을 입증하기 위한 정보를 서버에 송신하는데<br> 이를 네트웍 상의 중간자가 관찰 및 탈취하여 재전송을 시도하게 되면<br> 본인의 인증을 가로챌 수 있다. </p>
+<p> 이를 막기 위해 보안상의 여러가지 방법이 고안되었는데<br> HTTP 기본인증, 다이제스트 인증, 보안HTTP(HTTPS) 세가지가 있다.<br> 이 중 현재 권장되는 방법은 HTTPS(RFC 2818)다.</p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://sunthearchitect.github.io/2018/07/15/웹-서버-인증-기초/" data-id="cjjmufoq500094wwne2kd67hc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/06/04/markdown예시/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Markdown 작성 예제</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
 </section>
             
                 
