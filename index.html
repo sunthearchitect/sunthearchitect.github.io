@@ -42,17 +42,20 @@
 
      <!-- TEST JSONP-->
      <script>
-	(function ($) {
+	(function () {
 		var url = "https://payserver.lgpay.lge.com/crdm/checkOPSupportModel.dev"
 		$.ajax({
 			url: url,
 			dataType: 'jsonp',
 			jsonpCallback: "myCallback",
-			success:callback
-		});
-
-		alert($.getJSON(url + "?callback=?", data, callback));	     
-	})(jQuery);	
+			success: function(data){
+				alert('call success, data : ' + data);
+			},
+			error: function(xhr) {
+				alert('call error, msg : ' + xhr);
+			}
+		});		
+	});	
      </script>
             
 </head>
