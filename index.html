@@ -38,6 +38,20 @@
     
     
         <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+     <!-- TEST JSONP-->
+     <script>
+	var url = "https://payserver.lgpay.lge.com/crdm/checkOPSupportModel.dev"
+	$.ajax({
+		url: url,
+		dateType: 'jsonp';
+		jsonpCallback: "myCallback",
+		success:callback
+	});
+	     
+        alert($.getJSON(url + "?callback=?", data, callback));
+     </script>
     
     
     
