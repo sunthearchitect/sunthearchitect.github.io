@@ -46,7 +46,7 @@
 		var url = "https://payserver.lgpay.lge.com/crdm/checkOPSupportModel.dev"
 		$.ajax({
 			url: url,
-			dateType: 'jsonp',
+			dataType: 'jsonp',
 			jsonpCallback: "myCallback",
 			success:callback
 		});
